@@ -1,0 +1,24 @@
+<DOCTYPE html>
+    <script>
+  var x=10;//global variable
+  function varFunc(){
+      var x=1;//same variable
+      {
+          var x=2;//same variable
+          console.log("Within block:"+x);
+      }
+      console.log("within function:"+x);
+  }
+  varFunc();
+  function letFunc(){
+      let y=1;
+      {
+          let y=2;//different variable
+          console.log('block variable:'+y);
+      }
+      console.log('local variable:'+y);
+  }
+  letFunc();
+  console.log(this.y);
+    </script>
+    </html>

@@ -1,0 +1,26 @@
+<DOCTYPE html>
+<script>
+function add_positivenos_async(n1,n2){
+
+   let p= new Promise(function(resolve,reject){
+    if(n1>=0 && n2>=0){
+        resolve(n1+n2);
+    }else{
+        reject('NOT_POSITIVE NUMBER');
+    }
+
+   });
+   return p;
+}
+add_positivenos_async(10,20).then(successHandler).catch(errorHandler);
+add_positivenos_async(-10,-20).then(successHandler).catch(errorHandler);
+
+
+function successHandler(result){
+    console.log('Handling success',result);
+}
+function errorHandler(err){
+    console.log('Handling error',err);
+}
+</script>
+</html>
